@@ -1,0 +1,12 @@
+title: 每日閱讀情報
+description: TNL Daily 式深度閱讀＋我的藏書閱讀安排
+lang: zh-TW
+timezone: Asia/Taipei
+
+url: "https://caseonly666-del.github.io"
+baseurl: "/daily-reading"
+
+permalink: /:year-:month-:day.html
+
+markdown: kramdown
+future: true
