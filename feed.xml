@@ -1,26 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
-<channel>
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom">
 
-<title>每日閱讀情報</title>
-<link>https://caseonly666-del.github.io/daily-reading/</link>
-<description>TNL Daily 式深度閱讀＋我的藏書閱讀安排</description>
-<language>zh-TW</language>
+  <channel>
 
-<item>
-<title>2026-09-03｜地緣・防務｜每日閱讀情報</title>
+    <title>每日閱讀情報</title>
 
-<link>https://caseonly666-del.github.io/daily-reading/2026-09-03.html</link>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
 
-<guid isPermaLink="true">https://caseonly666-del.github.io/daily-reading/2026-09-03.html</guid>
+    <description>
+      每日重要議題深度解析、Q&amp;A 懶人包、關鍵追問與藏書閱讀安排
+    </description>
 
-<pubDate>Thu, 03 Sep 2026 08:00:00 +0800</pubDate>
+    <language>zh-TW</language>
 
-<description><![CDATA[
-星期四【地緣・防務】｜當低成本無人機也能進行戰略打擊，昂貴的防空系統還是唯一答案嗎？
-]]></description>
+    <atom:link
+      href="{{ site.url }}{{ site.baseurl }}/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
 
-</item>
+    {% for post in site.posts limit:30 %}
 
-</channel>
+    <item>
+
+      <title>{{ post.title | xml_escape }}</title>
+
+      <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
+
+      <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
+
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+
+      <description><![CDATA[
+        {% if post.category %}
+        【{{ post.category }}】
+        {% endif %}
+
+        {{ post.content | strip_html | truncatewords: 80 }}
+      ]]></description>
+
+    </item>
+
+    {% endfor %}
+
+  </channel>
 </rss>
