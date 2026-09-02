@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }}｜每日閱讀情報</title>
+
+  <style>
+    body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 22px 60px;
+      font-family: serif;
+      font-size: 20px;
+      line-height: 1.85;
+      color: #111;
+      background: #fff;
+    }
+
+    h1 {
+      font-size: 1.55em;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 1.25em;
+      margin-top: 2em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid #999;
+    }
+
+    h3 {
+      font-size: 1.08em;
+      margin-top: 1.5em;
+    }
+
+    p {
+      margin: 0.9em 0;
+    }
+
+    .meta {
+      font-size: 0.85em;
+      margin-bottom: 2em;
+    }
+
+    blockquote {
+      margin: 1.5em 0;
+      padding-left: 1em;
+      border-left: 3px solid #777;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #aaa;
+      margin: 2em 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="meta">
+    {{ page.date | date: "%Y-%m-%d" }}
+    {% if page.category %}｜{{ page.category }}{% endif %}
+  </div>
+
+  <h1>{{ page.title }}</h1>
+</header>
+
+<main>
+  {{ content }}
+</main>
+
+</body>
+</html>
