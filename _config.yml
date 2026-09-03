@@ -6,7 +6,7 @@ timezone: Asia/Taipei
 url: "https://caseonly666-del.github.io"
 baseurl: "/daily-reading"
 
-permalink: /:year-:month-:day.html
+permalink: /:year-:month-:day-:title.html
 
 markdown: kramdown
 future: true
